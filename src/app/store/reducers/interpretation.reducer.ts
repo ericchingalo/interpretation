@@ -4,14 +4,14 @@ export interface InterpretationState{
     loading: boolean;
     loaded: boolean;
     error: any;
-    interpretations: Interpretation[]
+    interpretations: Interpretation
 }
 
 export const initialState: InterpretationState = {
     loaded: false,
     loading: false,
     error: null,
-    interpretations: []
+    interpretations: null
 }
 
 export function interpretationReducer(
@@ -43,7 +43,7 @@ export function interpretationReducer(
             loading: false,
             loaded: true,
             error: null,
-            interpretations: [...state.interpretations, action.payload]
+            interpretations: action.payload
         }
 
         default: return state

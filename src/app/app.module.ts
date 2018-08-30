@@ -2,6 +2,7 @@ import {BrowserModule }from '@angular/platform-browser';
 import {NgModule }from '@angular/core'; 
 import {FormsModule }from '@angular/forms'
 import {HttpClientModule }from '@angular/common/http'; 
+import { AngularFontAwesomeModule } from 'angular-font-awesome'
 
 import {StoreModule }from '@ngrx/store'; 
 import {StoreDevtoolsModule }from '@ngrx/store-devtools'; 
@@ -22,13 +23,14 @@ import {InterpretationCommentComponent }from './modules/interpretation/component
 import {InterpretationLikeComponent }from './modules/interpretation/components/interpretation-like/interpretation-like.component'; 
 import {InterpretationListComponent }from './modules/interpretation/components/interpretation-list/interpretation-list.component'; 
 import {CommentLikeComponent }from './modules/interpretation/components/comment-like/comment-like.component'; 
+import { VisualizationCardComponent } from './components/visualization-card/visualization-card.component'; 
 import {HomeComponent }from './pages/home/home.component'; 
 
 import {AutosizeDirective }from './modules/interpretation/directives/autosize.directive'
 
 import {AbbreviatePipe }from  '../app/modules/interpretation/pipes/abbreviate.pipe'; 
 import {FilterPipe }from '../app/modules/interpretation/pipes/filter.pipe'; 
-import {TruncatePipe }from '../app/modules/interpretation/pipes/truncate.pipe'; 
+import {TruncatePipe }from '../app/modules/interpretation/pipes/truncate.pipe';
 
 
 
@@ -48,16 +50,23 @@ HomeComponent,
 AbbreviatePipe, 
 FilterPipe, 
 TruncatePipe, 
-AutosizeDirective, 
+AutosizeDirective, VisualizationCardComponent, 
 ], 
 imports:[
 
-BrowserModule, HttpClientModule, 
+BrowserModule, 
+
+HttpClientModule, 
+
+AngularFontAwesomeModule,
 
 FormsModule, 
 
-StoreModule.forRoot(reducers,  {metaReducers }), EffectsModule.forRoot(effects),  ! environment.production?StoreDevtoolsModule.instrument():[]
-  ], 
+StoreModule.forRoot(reducers,  {metaReducers }), 
+
+EffectsModule.forRoot(effects),  ! environment.production?StoreDevtoolsModule.instrument():[]
+
+], 
 providers:[], 
 bootstrap:[AppComponent]
 })
