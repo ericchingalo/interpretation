@@ -2,16 +2,19 @@ import {BrowserModule }from '@angular/platform-browser';
 import {NgModule }from '@angular/core'; 
 import {FormsModule }from '@angular/forms'
 import {HttpClientModule }from '@angular/common/http'; 
-import { AngularFontAwesomeModule } from 'angular-font-awesome'
+import { NgxDhis2MenuModule } from '@hisptz/ngx-dhis2-menu';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import {StoreModule }from '@ngrx/store'; 
 import {StoreDevtoolsModule }from '@ngrx/store-devtools'; 
-import {EffectsModule }from '@ngrx/effects'; 
+import {EffectsModule }from '@ngrx/effects';
 
 import {environment }from '../environments/environment'; 
 
 import {reducers, metaReducers, effects }from './store'
 
+import { AppRoutingModule } from './app.routing';
 
 import {AppComponent }from './app.component'; 
 import {AddCommentComponent }from './modules/interpretation/components/add-comment/add-comment.component'; 
@@ -57,6 +60,12 @@ imports:[
 BrowserModule, 
 
 HttpClientModule, 
+
+NgxDhis2MenuModule, 
+
+BrowserAnimationsModule,
+
+AppRoutingModule,
 
 AngularFontAwesomeModule,
 

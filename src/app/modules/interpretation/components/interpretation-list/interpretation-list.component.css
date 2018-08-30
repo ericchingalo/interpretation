@@ -52,6 +52,10 @@
     display: flex;
 }
 
+.interpretation-options:hover {
+    cursor: pointer;
+}
+
 .interpretation-comment-btn {
     font-size: 12px;
     text-decoration: none;

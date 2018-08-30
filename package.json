@@ -21,6 +21,7 @@
         "@angular/platform-browser-dynamic": "^6.1.0",
         "@angular/router": "^6.1.0",
         "@hisptz/ngx-dhis2-http-client": "^1.0.4",
+        "@hisptz/ngx-dhis2-menu": "^1.0.3",
         "@ngrx/effects": "^6.1.0",
         "@ngrx/entity": "^6.1.0",
         "@ngrx/store": "^6.1.0",

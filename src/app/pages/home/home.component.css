@@ -19,3 +19,11 @@
     margin-bottom: 10px;
     padding: 10px;
 }
+
+.btn {
+    border: none;
+}
+
+.btn:hover {
+    background-color: #276696;
+}
