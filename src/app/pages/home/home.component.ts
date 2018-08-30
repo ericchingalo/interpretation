@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   interpretations$ : Observable<Interpretation>;
   currentUser$ : Observable<CurrentUser>;
   apiRootUrl$: Observable<string>;
-
+  loadingInterpretations: boolean;
   constructor(private store: Store<State>) {
     this.interpretations$ = this.store.select(getAllInterpretations);
     this.currentUser$ = this.store.select(getCurrentUserDetails);
@@ -27,5 +27,13 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new LoadSystemInfo());
   }
-
+  
+  //to set loaders
+  loadingInterpretation(){
+    if(this.interpretations$ == null){
+      this.loadingInterpretations = true;
+    }else{
+      this.loadingInterpretations = false;
+    }
+  }
 }

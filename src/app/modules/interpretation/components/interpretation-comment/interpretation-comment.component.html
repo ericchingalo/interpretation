@@ -22,7 +22,7 @@
         <div class="interpretation-last-updated" *ngIf="comment?.showDate && !comment?.showDropdownOptions">
             {{ comment?.lastUpdated }}
         </div>
-        <a class="interpretation-more-btn" title="show more options" *ngIf="comment?.showMoreButton" (click)="toggleCommentDropdown($event)">
+        <a class="interpretation-more-btn" title="show more options" *ngIf="comment?.showMoreButton && (comment.user.name === currentUser.name)" (click)="toggleCommentDropdown($event)">
             <img src="assets/img/more.png" alt="" style="height: 20px;">
             <ul class="interpretation-more-options-dropdown" *ngIf="comment?.showDropdownOptions">
                 <li>

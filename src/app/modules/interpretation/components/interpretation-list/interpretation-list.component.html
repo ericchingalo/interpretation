@@ -23,7 +23,7 @@
 
                 <div class="interpretation-delete-block" *ngIf="interpretation.showDeleteDialog">
                     This interpretation will be deleted, are you sure?
-                    <a class="btn btn-xs btn-danger" (click)="deleteInterpretation(interpretation, $event)">
+                    <a class="btn btn-xs btn-default" (click)="deleteInterpretation(interpretation, $event)">
                         <i class="fa fa-trash-o"></i>
                     </a>
                     <a class="btn btn-xs btn-default" (click)="toggleDeleteConfirmationDialog(interpretation, $event)">

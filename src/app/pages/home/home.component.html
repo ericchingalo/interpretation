@@ -1,4 +1,7 @@
-<div class="container-fluid">
+<div class="interpretation-like" *ngIf="loadingInterpretations">
+    <img src="assets/img/balls-3.svg" alt="" style="height: 100px;">Loading Interpretations
+</div>
+<div class="container-fluid" *ngIf="!loadingInterpretations">
     <div class="row">
         <div class="col-7">
             <div class="interpretation-search">
