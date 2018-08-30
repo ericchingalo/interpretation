@@ -58,7 +58,7 @@
                     {{ interpretation.lastUpdated }}
                 </div>
                 <div>
-                    <a class="interpretation-more-btn" title="show more options" (click)="toggleInterpretationDropdownOptions(i, $event)" *ngIf="interpretation.showMoreButton">
+                    <a class="interpretation-more-btn" title="show more options" (click)="toggleInterpretationDropdownOptions(i, $event)" *ngIf="interpretation.showMoreButton  && (interpretation.user.name === currentUser.name)">
                         <img src="assets/img/more.png" alt="" style="height: 20px;">
                     </a>
                     <ul class="interpretation-more-options-dropdown" *ngIf="interpretation.showDropdownOptions">

@@ -1,7 +1,7 @@
 import {Injectable }from '@angular/core'; 
 import {Actions, Effect, ofType }from '@ngrx/effects'; 
 import {Observable, of }from 'rxjs'; 
-import {catchError, map, switchMap }from 'rxjs/internal/operators'; 
+import {catchError, map, switchMap }from 'rxjs/operators'; 
 
 import {NgxDhis2HttpClientService }from '@hisptz/ngx-dhis2-http-client'; 
 
