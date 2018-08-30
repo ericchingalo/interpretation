@@ -55,7 +55,7 @@
             </div>
             <div class="interpretation-more-options">
                 <div class="interpretation-last-updated" *ngIf="interpretation.showDate && !interpretation.showDropdownOptions">
-                    {{interpretation.lastUpdated}}
+                    {{ interpretation.lastUpdated }}
                 </div>
                 <div>
                     <a class="interpretation-more-btn" title="show more options" (click)="toggleInterpretationDropdownOptions(i, $event)" *ngIf="interpretation.showMoreButton">

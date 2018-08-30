@@ -41,7 +41,7 @@ catchError((errorNotification:any) => of(new LoadNotificationSuccess(errorNotifi
 
 getInterpretations(rootUrl) {
     return new Observable(observer =>  {
-        this.httpService.get(`interpretations.json?fields=id,type,text,created,likes,likedBy[id,name],user[id,name,displayName],comments[id,created,lastUpdated,text,user[id,name,displayName]],eventReport[*],eventChart[*],chart[*],map[id,name,mapViews[*]],reportTable[*]&paging=false`)
+        this.httpService.get(`interpretations.json?fields=id,type,text,created,lastUpdated,likes,likedBy[id,name],user[id,name,displayName],comments[id,created,lastUpdated,text,user[id,name,displayName]],eventReport[*],eventChart[*],chart[*],map[id,name,mapViews[*]],reportTable[*]&paging=false`)
         .subscribe((response:any) =>  {
             observer.next(response.interpretations); 
             observer.complete(); 
@@ -49,5 +49,3 @@ getInterpretations(rootUrl) {
       }); 
     }
 }
-
-//interpretations.json?fields=id,type,text,created,likes,likedBy[id,name],user[id,name,displayName],comments[id,created,lastUpdated,text,user[id,name,displayName]],eventReport[*],eventChart[*],chart[*],map[id,name,mapViews[*]],reportTable[*]&paging=false
