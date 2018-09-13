@@ -52,3 +52,4 @@ export function interpretationReducer(
 
 export const getInterpretations = (state: InterpretationState) => state.interpretations;
 export const getInterpetationError = (state: InterpretationState) => state.error;
+export const getInterpretationLoaded = (state : InterpretationState) => state.loaded;

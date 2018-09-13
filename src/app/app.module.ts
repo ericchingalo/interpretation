@@ -35,6 +35,7 @@ import {AbbreviatePipe }from  '../app/modules/interpretation/pipes/abbreviate.pi
 import {FilterPipe }from '../app/modules/interpretation/pipes/filter.pipe'; 
 import {TruncatePipe }from '../app/modules/interpretation/pipes/truncate.pipe';
 import { DropdownDirective } from './modules/interpretation/directives/dropdown.directive';
+import { InterpretationLoaderComponent } from './components/interpretation-loader/interpretation-loader.component';
 
 
 
@@ -54,7 +55,7 @@ HomeComponent,
 AbbreviatePipe, 
 FilterPipe, 
 TruncatePipe, 
-AutosizeDirective, VisualizationCardComponent, DropdownDirective, 
+AutosizeDirective, VisualizationCardComponent, DropdownDirective, InterpretationLoaderComponent, 
 ], 
 imports:[
 
