@@ -42,6 +42,6 @@
         </div>
     </div>
     <div>
-        <app-add-comment [interpretation]="interpretation" [rootUrl]="rootUrl" (onCommentCreate)="commentCreated($event)"></app-add-comment>
+        <app-add-comment [interpretation]="interpretation" [rootUrl]="rootUrl" [users]="(users$ | async)" (onCommentCreate)="commentCreated($event)"></app-add-comment>
     </div>
 </div>

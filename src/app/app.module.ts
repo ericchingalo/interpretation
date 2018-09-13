@@ -34,6 +34,7 @@ import {AutosizeDirective }from './modules/interpretation/directives/autosize.di
 import {AbbreviatePipe }from  '../app/modules/interpretation/pipes/abbreviate.pipe'; 
 import {FilterPipe }from '../app/modules/interpretation/pipes/filter.pipe'; 
 import {TruncatePipe }from '../app/modules/interpretation/pipes/truncate.pipe';
+import { DropdownDirective } from './modules/interpretation/directives/dropdown.directive';
 
 
 
@@ -53,7 +54,7 @@ HomeComponent,
 AbbreviatePipe, 
 FilterPipe, 
 TruncatePipe, 
-AutosizeDirective, VisualizationCardComponent, 
+AutosizeDirective, VisualizationCardComponent, DropdownDirective, 
 ], 
 imports:[
 

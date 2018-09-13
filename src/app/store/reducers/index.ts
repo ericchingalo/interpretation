@@ -4,15 +4,19 @@ import { SystemInfoState, systemInfoReducer } from './system-info.reducer';
 import { NotificationState, notificationReducer } from './notification.reducer';
 import { currentUserReducer, CurrentUserState } from './current-user.reducer';
 import { InterpretationState, interpretationReducer } from './interpretation.reducer';
+import { UsersState, userReducer } from './users.reducer'
 
 
 /**
  * Application interface
  */
 export interface State {
+
   systemInfo: SystemInfoState;
 
   notification: NotificationState;
+
+  users : UsersState;
 
   currentUser: CurrentUserState;
   
@@ -26,6 +30,7 @@ export interface State {
 export const reducers: ActionReducerMap<State> = {
   systemInfo: systemInfoReducer,
   notification: notificationReducer,
+  users : userReducer,
   currentUser: currentUserReducer,
   interpretations: interpretationReducer
 };

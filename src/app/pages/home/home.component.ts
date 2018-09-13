@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   currentUser$ : Observable<CurrentUser>;
   apiRootUrl$: Observable<string>;
   loadingInterpretations: boolean;
+  
   constructor(private store: Store<State>) {
     this.interpretations$ = this.store.select(getAllInterpretations);
     this.currentUser$ = this.store.select(getCurrentUserDetails);

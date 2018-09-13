@@ -7,7 +7,7 @@ import { Directive, HostListener, ElementRef } from '@angular/core';
 export class AutosizeDirective {
   @HostListener('input',['$event.target'])
   
-  onInput(textArea: HTMLTextAreaElement): void {
+  onInput(){
     this.adjust();
   }
   constructor(public element: ElementRef){
@@ -15,11 +15,10 @@ export class AutosizeDirective {
   ngAfterContentChecked(): void{
     this.adjust();
   }
-  adjust(): void{
+  adjust(){
     this.element.nativeElement.style.overflow = 'hidden';
     this.element.nativeElement.style.height = 'auto';
-    this.element.nativeElement.style.height = this.
-    element.nativeElement.scrollHeight + "px";
+    this.element.nativeElement.style.height = this.element.nativeElement.scrollHeight + "px";
   }
 
 }

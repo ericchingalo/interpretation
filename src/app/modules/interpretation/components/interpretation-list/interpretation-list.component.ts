@@ -16,11 +16,13 @@ export class InterpretationListComponent implements OnInit {
   @Output() onInterpretationUpdate: EventEmitter<any> = new EventEmitter<any>();
   @Input() visualizationTypeObject: any;
   interpretationTerm: string;
-  constructor(private interpretationService: InterpretationService) { }
+  
+
+  constructor(private interpretationService: InterpretationService) {
+   }
 
   ngOnInit() {
     if (this.interpretations) {
-
       this.interpretations = this.interpretations.map((interpretation: any, index: number) => this._sanitizeInterpretation(interpretation, index));
     }
   }

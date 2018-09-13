@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {InterpretationService} from '../../services/interpretation.service';
+import { User } from '../../../../models/users.model';
 
 @Component({
   selector: 'app-add-comment',
@@ -9,6 +10,7 @@ import {InterpretationService} from '../../services/interpretation.service';
 export class AddCommentComponent implements OnInit {
   @Input() interpretation: any;
   @Input() rootUrl: string;
+  @Input() users : any[];
   commentFormData: any;
   @Output() onCommentCreate: EventEmitter<any> = new EventEmitter<any>();
   creating: boolean;
@@ -16,7 +18,7 @@ export class AddCommentComponent implements OnInit {
   constructor(private interpretationService: InterpretationService) {
     this.creating = false;
   }
-
+  
   ngOnInit() {
     if (this.interpretation) {
       this.commentFormData = {
@@ -44,6 +46,14 @@ export class AddCommentComponent implements OnInit {
   cancel(e) {
     e.stopPropagation();
     this.commentFormData.comment = '';
+  }
+
+
+  //method to mention
+  onCommenting(){
+    if(this.commentFormData.comment.charAt(this.commentFormData.comment.length - 1) === '@'){
+        
+    }
   }
 
 }
