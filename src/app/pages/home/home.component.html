@@ -1,7 +1,7 @@
 <div *ngIf="(interpretationLoadedStatus$ | async) === false">
     <app-interpretation-loader></app-interpretation-loader>
 </div>
-<div class="container-fluid" *ngIf="(interpretationLoadedStatus$ | async) === true">
+<div class="container-fluid animate-interpretation" *ngIf="(interpretationLoadedStatus$ | async) === true">
     <div class="row">
         <div class="col-7">
             <div class="interpretation-search">
