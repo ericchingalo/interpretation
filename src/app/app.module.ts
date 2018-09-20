@@ -36,6 +36,9 @@ import {FilterPipe }from '../app/modules/interpretation/pipes/filter.pipe';
 import {TruncatePipe }from '../app/modules/interpretation/pipes/truncate.pipe';
 import { DropdownDirective } from './modules/interpretation/directives/dropdown.directive';
 import { InterpretationLoaderComponent } from './components/interpretation-loader/interpretation-loader.component';
+import { TopInterpretationsComponent } from './components/top-interpretations/top-interpretations.component';
+import { TopAuthorsComponent } from './components/top-authors/top-authors.component';
+import { TopCommentatorsComponent } from './components/top-commentators/top-commentators.component';
 
 
 
@@ -55,7 +58,7 @@ HomeComponent,
 AbbreviatePipe, 
 FilterPipe, 
 TruncatePipe, 
-AutosizeDirective, VisualizationCardComponent, DropdownDirective, InterpretationLoaderComponent, 
+AutosizeDirective, VisualizationCardComponent, DropdownDirective, InterpretationLoaderComponent, TopInterpretationsComponent, TopAuthorsComponent, TopCommentatorsComponent, 
 ], 
 imports:[
 

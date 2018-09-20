@@ -42,6 +42,7 @@
 
 .interpretation-search {
     margin-bottom: 10px;
+    /* width: 80%; */
 }
 
 .interpretation-search :focus {
@@ -58,5 +59,11 @@
 }
 
 .btn:hover {
+    color: rgba(255, 255, 255, 0.986);
+    background-color: #276696;
+}
+
+.btn:active {
+    color: rgba(255, 255, 255, 0.986);
     background-color: #276696;
 }
