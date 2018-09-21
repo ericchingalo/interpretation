@@ -17,27 +17,13 @@ export const rankedAuthors = createSelector(
     getAllUsers,
      getAllInterpretations, 
      (users: User[], interpretations: Interpretation) =>{
-         //create a logic to pick top authors
          let rankedAuthorsList : Array<{ id : string,name : string, interpretationCounts : number}> = [ ]
         interpretations.map((interpretation: any) => {
             users.map( user => {
                 if(user.id === interpretation.user.id){
-                    if(rankedAuthorsList){
-                        console.log('its there')
-                        rankedAuthorsList.map((author: any)=> {
-                            if(author && author.id){
-                                if(author.id === user.id){
-                                    ++author.interpretationCounts
-                                }else{--=-=
-                                    const newAuthor = {
-                                        id : user.id,
-                                        name : user.name,
-                                        interpretationCounts : 1
-                                    }
-                                    rankedAuthorsList.push(newAuthor)
-                                }
-                            }
-                        })
+                    if(_.some(rankedAuthorsList, {id : user.id})){
+                        let alreadExistingAuthor = _.find(rankedAuthorsList, {id : user.id});
+                        ++alreadExistingAuthor.interpretationCounts;
                     }else{
                         let newAuthor = {
                             id : user.id,
@@ -45,42 +31,12 @@ export const rankedAuthors = createSelector(
                             interpretationCounts : 1
                         }
                         rankedAuthorsList.push(newAuthor)
-                        console.log('new state', rankedAuthorsList)
                     }
                     }
                 }) 
         } )
-        return rankedAuthorsList;
+        rankedAuthorsList = _.reverse(_.sortBy(rankedAuthorsList, ['interpretationCounts']))
+        return _.slice(rankedAuthorsList, 0 , 5);
      }
       )
-
-
-    //   users.map( user => {
-    //     if(user.id === interpretation.user.id){
-    //         if(rankedAuthorsList === []){
-    //             console.log('its there')
-    //             rankedAuthorsList.map((author: any)=> {
-    //                 if(author && author.id){
-    //                     if(author.id === user.id){
-    //                         ++author.interpretationCounts
-    //                     }else{
-    //                         const newAuthor = {
-    //                             id : user.id,
-    //                             name : user.name,
-    //                             interpretationCounts : 1
-    //                         }
-    //                         rankedAuthorsList.push(newAuthor)
-    //                     }
-    //                 }
-    //             })
-    //         }else{
-    //             let newAuthor = {
-    //                 id : user.id,
-    //                 name : user.name,
-    //                 interpretationCounts : 1
-    //             }
-    //             rankedAuthorsList.push(newAuthor)
-    //             console.log('new state', rankedAuthorsList)
-    //         }
-    //         }
-    //     }) 
+      
